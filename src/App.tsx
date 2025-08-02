@@ -6,6 +6,7 @@ import { financeRoutes } from './routes';
 import { Layout } from './components/Layout';
 import { AuthGuard } from './components/AuthGuard';
 import { AuthUtils } from './utils/authUtils';
+import { getBasePath } from './config/deployment';
 import { Dashboard } from './pages/Dashboard';
 import { Reports } from './pages/Reports';
 import { Accounts } from './pages/Accounts';
@@ -95,10 +96,18 @@ const App: React.FC = () => {
     }
   }, []);
 
-  // 检测是否需要使用basename
-  // 只有当URL路径包含/finance时才使用basename
-  const needsBasename = window.location.pathname.startsWith('/finance');
-  const basename = needsBasename ? "/finance" : "";
+  // 获取 basename 配置
+  // 在生产环境下使用 /mf-finance，开发环境下不使用 basename
+  const getBasename = () => {
+    if (process.env.NODE_ENV === 'production') {
+      // 在 GitHub Pages 上独立运行时使用 /mf-finance
+      // 在主应用中集成时，主应用会处理 /mf-shell/finance 路径
+      return window.location.pathname.startsWith('/mf-finance') ? getBasePath() : '';
+    }
+    return '';
+  };
+
+  const basename = getBasename();
 
   return (
     <ConfigProvider locale={zhCN}>
