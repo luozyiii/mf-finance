@@ -40,6 +40,13 @@ npm run dev
 npm run build
 ```
 
+### GitHub Pages 部署
+```bash
+npm run build:gh-pages
+```
+
+详细部署说明请参考 [DEPLOYMENT.md](./DEPLOYMENT.md)
+
 ## 页面结构
 
 - `/finance` - 财务概览（默认页面）

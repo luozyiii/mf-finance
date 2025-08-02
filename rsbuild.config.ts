@@ -8,4 +8,13 @@ export default defineConfig({
   server: {
     port: 3002,
   },
+  output: {
+    // GitHub Pages 部署配置
+    assetPrefix: process.env.NODE_ENV === 'production'
+      ? '/mf-finance/' // 仓库名
+      : '/',
+  },
+  html: {
+    title: 'MF Finance - 微前端财务系统',
+  },
 });
