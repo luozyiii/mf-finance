@@ -1,0 +1,132 @@
+{
+  "todayData": {
+    "totalRevenue": {
+      "value": 128900,
+      "change": 15.8,
+      "trend": "up"
+    },
+    "totalExpense": {
+      "value": 89300,
+      "change": 8.2,
+      "trend": "up"
+    },
+    "netProfit": {
+      "value": 39600,
+      "change": 28.5,
+      "trend": "up"
+    },
+    "cashFlow": {
+      "value": 45200,
+      "change": -5.3,
+      "trend": "down"
+    },
+    "accountsReceivable": {
+      "value": 156800,
+      "change": 12.1,
+      "trend": "up"
+    },
+    "accountsPayable": {
+      "value": 78900,
+      "change": -8.7,
+      "trend": "down"
+    }
+  },
+  "weeklyData": {
+    "revenue": [
+      { "date": "2024-01-26", "value": 115600 },
+      { "date": "2024-01-27", "value": 122300 },
+      { "date": "2024-01-28", "value": 108900 },
+      { "date": "2024-01-29", "value": 134500 },
+      { "date": "2024-01-30", "value": 119800 },
+      { "date": "2024-01-31", "value": 127600 },
+      { "date": "2024-02-01", "value": 128900 }
+    ],
+    "expense": [
+      { "date": "2024-01-26", "value": 82400 },
+      { "date": "2024-01-27", "value": 87600 },
+      { "date": "2024-01-28", "value": 79200 },
+      { "date": "2024-01-29", "value": 91800 },
+      { "date": "2024-01-30", "value": 85300 },
+      { "date": "2024-01-31", "value": 88700 },
+      { "date": "2024-02-01", "value": 89300 }
+    ],
+    "netProfit": [
+      { "date": "2024-01-26", "value": 33200 },
+      { "date": "2024-01-27", "value": 34700 },
+      { "date": "2024-01-28", "value": 29700 },
+      { "date": "2024-01-29", "value": 42700 },
+      { "date": "2024-01-30", "value": 34500 },
+      { "date": "2024-01-31", "value": 38900 },
+      { "date": "2024-02-01", "value": 39600 }
+    ],
+    "cashFlow": [
+      { "date": "2024-01-26", "value": 38900 },
+      { "date": "2024-01-27", "value": 42300 },
+      { "date": "2024-01-28", "value": 35600 },
+      { "date": "2024-01-29", "value": 48700 },
+      { "date": "2024-01-30", "value": 41200 },
+      { "date": "2024-01-31", "value": 47800 },
+      { "date": "2024-02-01", "value": 45200 }
+    ]
+  },
+  "expenseBreakdown": [
+    {
+      "category": "人力成本",
+      "amount": 40000,
+      "percentage": 44.8
+    },
+    {
+      "category": "运营费用",
+      "amount": 30000,
+      "percentage": 33.6
+    },
+    {
+      "category": "营销费用",
+      "amount": 19300,
+      "percentage": 21.6
+    }
+  ],
+  "revenueBreakdown": [
+    {
+      "category": "产品销售",
+      "amount": 89000,
+      "percentage": 69.1
+    },
+    {
+      "category": "服务收入",
+      "amount": 28900,
+      "percentage": 22.4
+    },
+    {
+      "category": "其他收入",
+      "amount": 11000,
+      "percentage": 8.5
+    }
+  ],
+  "topAccounts": [
+    {
+      "name": "主营业务收入",
+      "type": "收入",
+      "balance": 1289000,
+      "change": 15.8
+    },
+    {
+      "name": "销售费用",
+      "type": "费用",
+      "balance": 456000,
+      "change": 8.2
+    },
+    {
+      "name": "应收账款",
+      "type": "资产",
+      "balance": 156800,
+      "change": 12.1
+    },
+    {
+      "name": "应付账款",
+      "type": "负债",
+      "balance": 78900,
+      "change": -8.7
+    }
+  ]
+}

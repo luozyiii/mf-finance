@@ -1,0 +1,405 @@
+/* 容器 */
+.container {
+  padding: 16px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* 骨架屏动画 */
+@keyframes skeletonPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* 页面头部 */
+.pageHeader {
+  margin-bottom: 24px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.breadcrumbItem {
+  width: 60px;
+  height: 14px;
+  background: #e8e8e8;
+  border-radius: 3px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.breadcrumbSeparator {
+  width: 8px;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 2px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.pageTitle {
+  width: 200px;
+  height: 32px;
+  background: #d9d9d9;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.pageDescription {
+  width: 300px;
+  height: 16px;
+  background: #e8e8e8;
+  border-radius: 4px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+/* 财务指标卡片 */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.metricCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.metricIcon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #e8f4fd 0%, #d1ecf1 100%);
+  border-radius: 8px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.metricContent {
+  flex: 1;
+}
+
+.metricValue {
+  width: 100px;
+  height: 28px;
+  background: #e8e8e8;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.metricLabel {
+  width: 120px;
+  height: 16px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.metricChange {
+  width: 80px;
+  height: 14px;
+  background: #e8f5e8;
+  border-radius: 3px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+/* 报表区域 */
+.reportsSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.chartCard,
+.summaryCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.chartHeader,
+.summaryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chartTitle,
+.summaryTitle {
+  width: 140px;
+  height: 20px;
+  background: #e8e8e8;
+  border-radius: 4px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.chartFilters {
+  display: flex;
+  gap: 8px;
+}
+
+.filterButton {
+  width: 70px;
+  height: 28px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.chartContent {
+  height: 220px;
+  position: relative;
+}
+
+/* 折线图 */
+.lineChart {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.chartGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gridLine {
+  height: 1px;
+  background: #f5f5f5;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.chartLine {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, #1890ff 0%, #40a9ff 50%, #69c0ff 100%);
+  border-radius: 1px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+  transform: rotate(-5deg);
+}
+
+.chartDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10%;
+}
+
+.chartDot {
+  width: 6px;
+  height: 6px;
+  background: #1890ff;
+  border-radius: 50%;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+/* 汇总卡片 */
+.summaryContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.summaryItem:last-child {
+  border-bottom: none;
+}
+
+.summaryLabel {
+  width: 80px;
+  height: 16px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.summaryValue {
+  width: 60px;
+  height: 16px;
+  background: #e8e8e8;
+  border-radius: 3px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+/* 表格区域 */
+.tableSection {
+  margin-bottom: 24px;
+}
+
+.tableCard {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.tableHeader {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tableTitle {
+  width: 120px;
+  height: 20px;
+  background: #e8e8e8;
+  border-radius: 4px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.tableActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.dateRange {
+  width: 180px;
+  height: 32px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.exportButton {
+  width: 80px;
+  height: 32px;
+  background: #e8e8e8;
+  border-radius: 6px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.tableContent {
+  padding: 0 20px;
+}
+
+.tableHeaderRow {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tableHeaderCell {
+  height: 16px;
+  background: #e8e8e8;
+  border-radius: 3px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableCell {
+  height: 16px;
+  background: #f5f5f5;
+  border-radius: 3px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.tableCell:nth-child(1) { width: 70%; }
+.tableCell:nth-child(2) { width: 80%; }
+.tableCell:nth-child(3) { width: 60%; }
+.tableCell:nth-child(4) { width: 90%; }
+.tableCell:nth-child(5) { width: 75%; }
+.tableCell:nth-child(6) { width: 50%; }
+
+/* 分页 */
+.tablePagination {
+  padding: 16px 20px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paginationInfo {
+  width: 120px;
+  height: 16px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.paginationControls {
+  display: flex;
+  gap: 8px;
+}
+
+.paginationButton {
+  width: 32px;
+  height: 32px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .reportsSection {
+    grid-template-columns: 1fr;
+  }
+  
+  .tableHeaderRow,
+  .tableRow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .tableHeaderCell:nth-child(n+4),
+  .tableCell:nth-child(n+4) {
+    display: none;
+  }
+}
