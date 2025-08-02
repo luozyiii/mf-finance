@@ -37,10 +37,10 @@ export const isGitHubPages = (): boolean => {
 // 获取登录页面URL
 export const getLoginUrl = (): string => {
   if (isGitHubPages()) {
-    // GitHub Pages 环境，跳转到主应用的登录页
-    return 'https://luozyiii.github.io/micro-frontend-app/login';
+    // GitHub Pages 环境，跳转到主应用 mf-shell 的登录页
+    return 'https://luozyiii.github.io/mf-shell/login';
   }
-  
+
   // 开发环境，跳转到本地主应用
   return 'http://localhost:3000/login';
 };
@@ -48,9 +48,9 @@ export const getLoginUrl = (): string => {
 // 获取主应用URL
 export const getShellUrl = (): string => {
   if (isGitHubPages()) {
-    return 'https://luozyiii.github.io/micro-frontend-app';
+    return 'https://luozyiii.github.io/mf-shell';
   }
-  
+
   return 'http://localhost:3000';
 };
 
