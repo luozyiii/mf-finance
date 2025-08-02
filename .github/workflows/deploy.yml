@@ -36,14 +36,18 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          # 自动注入 basePath 到 Rsbuild 配置
+          static_site_generator: rsbuild
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build with Rsbuild
-        run: npm run build:gh-pages
+        run: npm run build
         env:
           NODE_ENV: production
+          PUBLIC_URL: https://luozyiii.github.io/mf-finance/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
