@@ -1,4 +1,4 @@
-import { getLoginUrl } from '../config/deployment';
+import { currentConfig } from '../config/deployment';
 
 // 认证相关工具类
 export class AuthUtils {
@@ -105,9 +105,9 @@ export class AuthUtils {
    */
   static redirectToLogin(returnUrl?: string): void {
     const currentUrl = returnUrl || window.location.href;
-    const loginUrl = getLoginUrl();
     // 跳转到主应用登录页面
-    window.location.href = `${loginUrl}?returnUrl=${encodeURIComponent(currentUrl)}`;
+    const shellUrl = currentConfig.shellUrl;
+    window.location.href = `${shellUrl}/login?returnUrl=${encodeURIComponent(currentUrl)}`;
   }
 
   /**
@@ -117,8 +117,8 @@ export class AuthUtils {
     this.removeToken();
     // 跳转到主应用登录页面，携带当前页面作为回调地址
     const currentUrl = window.location.href;
-    const loginUrl = getLoginUrl();
-    window.location.href = `${loginUrl}?returnUrl=${encodeURIComponent(currentUrl)}`;
+    const shellUrl = currentConfig.shellUrl;
+    window.location.href = `${shellUrl}/login?returnUrl=${encodeURIComponent(currentUrl)}`;
   }
 
   /**

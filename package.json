@@ -6,7 +6,8 @@
     "dev": "rsbuild dev --open",
     "build": "rsbuild build",
     "build:gh-pages": "NODE_ENV=production rsbuild build",
-    "preview": "rsbuild preview"
+    "preview": "rsbuild preview",
+    "deploy": "npm run build:gh-pages"
   },
   "dependencies": {
     "@ant-design/charts": "^2.6.1",
