@@ -1,6 +1,22 @@
 import React, { useState } from 'react';
-import { Card, Row, Col, Statistic, Typography, Tabs, Space, Table } from 'antd';
-import { ArrowUpOutlined, ArrowDownOutlined, DollarOutlined, BankOutlined, RiseOutlined, WalletOutlined } from '@ant-design/icons';
+import {
+  Card,
+  Row,
+  Col,
+  Statistic,
+  Typography,
+  Tabs,
+  Space,
+  Table,
+} from 'antd';
+import {
+  ArrowUpOutlined,
+  ArrowDownOutlined,
+  DollarOutlined,
+  BankOutlined,
+  RiseOutlined,
+  WalletOutlined,
+} from '@ant-design/icons';
 import { Line, Column, Pie } from '@ant-design/charts';
 import financeData from './financeData.json';
 
@@ -8,8 +24,6 @@ const { Title, Text } = Typography;
 
 export const Dashboard: React.FC = () => {
   const [data] = useState(financeData);
-
-
 
   // 格式化货币显示
   const formatCurrency = (num: number) => {
@@ -33,20 +47,29 @@ export const Dashboard: React.FC = () => {
     <div style={{ padding: '16px' }}>
       {/* 今日财务概览 */}
       <div style={{ marginBottom: 24 }}>
-        <Title level={4} style={{ marginBottom: 16 }}>今日财务概览</Title>
+        <Title level={4} style={{ marginBottom: 16 }}>
+          今日财务概览
+        </Title>
         <Row gutter={16}>
           <Col span={6}>
             <Card>
               <Statistic
                 title="总收入"
                 value={data.todayData.totalRevenue.value}
-                formatter={(value) => formatCurrency(Number(value))}
-                valueStyle={{ color: getTrendColor(data.todayData.totalRevenue.trend) }}
+                formatter={value => formatCurrency(Number(value))}
+                valueStyle={{
+                  color: getTrendColor(data.todayData.totalRevenue.trend),
+                }}
                 prefix={<DollarOutlined />}
                 suffix={
                   <Space>
                     {getTrendIcon(data.todayData.totalRevenue.trend)}
-                    <Text style={{ color: getTrendColor(data.todayData.totalRevenue.trend), fontSize: 12 }}>
+                    <Text
+                      style={{
+                        color: getTrendColor(data.todayData.totalRevenue.trend),
+                        fontSize: 12,
+                      }}
+                    >
                       {data.todayData.totalRevenue.change}%
                     </Text>
                   </Space>
@@ -59,13 +82,20 @@ export const Dashboard: React.FC = () => {
               <Statistic
                 title="总支出"
                 value={data.todayData.totalExpense.value}
-                formatter={(value) => formatCurrency(Number(value))}
-                valueStyle={{ color: getTrendColor(data.todayData.totalExpense.trend) }}
+                formatter={value => formatCurrency(Number(value))}
+                valueStyle={{
+                  color: getTrendColor(data.todayData.totalExpense.trend),
+                }}
                 prefix={<WalletOutlined />}
                 suffix={
                   <Space>
                     {getTrendIcon(data.todayData.totalExpense.trend)}
-                    <Text style={{ color: getTrendColor(data.todayData.totalExpense.trend), fontSize: 12 }}>
+                    <Text
+                      style={{
+                        color: getTrendColor(data.todayData.totalExpense.trend),
+                        fontSize: 12,
+                      }}
+                    >
                       {data.todayData.totalExpense.change}%
                     </Text>
                   </Space>
@@ -78,13 +108,20 @@ export const Dashboard: React.FC = () => {
               <Statistic
                 title="净利润"
                 value={data.todayData.netProfit.value}
-                formatter={(value) => formatCurrency(Number(value))}
-                valueStyle={{ color: getTrendColor(data.todayData.netProfit.trend) }}
+                formatter={value => formatCurrency(Number(value))}
+                valueStyle={{
+                  color: getTrendColor(data.todayData.netProfit.trend),
+                }}
                 prefix={<RiseOutlined />}
                 suffix={
                   <Space>
                     {getTrendIcon(data.todayData.netProfit.trend)}
-                    <Text style={{ color: getTrendColor(data.todayData.netProfit.trend), fontSize: 12 }}>
+                    <Text
+                      style={{
+                        color: getTrendColor(data.todayData.netProfit.trend),
+                        fontSize: 12,
+                      }}
+                    >
                       {data.todayData.netProfit.change}%
                     </Text>
                   </Space>
@@ -97,13 +134,20 @@ export const Dashboard: React.FC = () => {
               <Statistic
                 title="现金流"
                 value={data.todayData.cashFlow.value}
-                formatter={(value) => formatCurrency(Number(value))}
-                valueStyle={{ color: getTrendColor(data.todayData.cashFlow.trend) }}
+                formatter={value => formatCurrency(Number(value))}
+                valueStyle={{
+                  color: getTrendColor(data.todayData.cashFlow.trend),
+                }}
                 prefix={<BankOutlined />}
                 suffix={
                   <Space>
                     {getTrendIcon(data.todayData.cashFlow.trend)}
-                    <Text style={{ color: getTrendColor(data.todayData.cashFlow.trend), fontSize: 12 }}>
+                    <Text
+                      style={{
+                        color: getTrendColor(data.todayData.cashFlow.trend),
+                        fontSize: 12,
+                      }}
+                    >
                       {Math.abs(data.todayData.cashFlow.change)}%
                     </Text>
                   </Space>
@@ -116,7 +160,9 @@ export const Dashboard: React.FC = () => {
 
       {/* 过去7天财务趋势 */}
       <div style={{ marginBottom: 24 }}>
-        <Title level={4} style={{ marginBottom: 16 }}>过去7天财务趋势</Title>
+        <Title level={4} style={{ marginBottom: 16 }}>
+          过去7天财务趋势
+        </Title>
         <Tabs
           defaultActiveKey="1"
           items={[
@@ -191,7 +237,6 @@ export const Dashboard: React.FC = () => {
                           size: 4,
                           shape: 'circle',
                         }}
-
                         xAxis={{
                           label: {
                             formatter: (text: any) => {
@@ -210,7 +255,6 @@ export const Dashboard: React.FC = () => {
                         xField="date"
                         yField="value"
                         color="#722ed1"
-
                         xAxis={{
                           label: {
                             formatter: (text: any) => {
@@ -242,7 +286,6 @@ export const Dashboard: React.FC = () => {
               colorField="type"
               radius={0.8}
               label={false}
-
               legend={{
                 position: 'bottom',
               }}
@@ -260,7 +303,6 @@ export const Dashboard: React.FC = () => {
               colorField="type"
               radius={0.8}
               label={false}
-
               legend={{
                 position: 'bottom',
               }}
@@ -287,11 +329,18 @@ export const Dashboard: React.FC = () => {
               dataIndex: 'type',
               key: 'type',
               render: (type: string) => (
-                <Text style={{
-                  color: type === '收入' ? '#52c41a' :
-                        type === '费用' ? '#ff4d4f' :
-                        type === '资产' ? '#1890ff' : '#722ed1'
-                }}>
+                <Text
+                  style={{
+                    color:
+                      type === '收入'
+                        ? '#52c41a'
+                        : type === '费用'
+                          ? '#ff4d4f'
+                          : type === '资产'
+                            ? '#1890ff'
+                            : '#722ed1',
+                  }}
+                >
                   {type}
                 </Text>
               ),
@@ -308,7 +357,8 @@ export const Dashboard: React.FC = () => {
               key: 'change',
               render: (change: number) => (
                 <Text style={{ color: change > 0 ? '#52c41a' : '#ff4d4f' }}>
-                  {change > 0 ? '+' : ''}{change}%
+                  {change > 0 ? '+' : ''}
+                  {change}%
                 </Text>
               ),
             },

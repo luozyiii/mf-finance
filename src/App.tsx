@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from 'react-router-dom';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
 import { financeRoutes } from './routes';
@@ -102,7 +107,9 @@ const App: React.FC = () => {
     if (currentConfig.isProduction) {
       // 在 GitHub Pages 上独立运行时使用 /mf-finance
       // 在主应用中集成时，主应用会处理 /mf-shell/finance 路径
-      return window.location.pathname.startsWith('/mf-finance') ? currentConfig.basename : '';
+      return window.location.pathname.startsWith('/mf-finance')
+        ? currentConfig.basename
+        : '';
     }
     return currentConfig.basename;
   };

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Card, Row, Col, Tabs, Table } from 'antd';
+import React, { useState as _useState } from 'react';
+import { Card, Row as _Row, Col as _Col, Tabs, Table } from 'antd';
 
 const incomeColumns = [
   {
@@ -43,88 +43,92 @@ export const Reports: React.FC = () => {
             key: 'income',
             label: '收入报表',
             children: (
-          <Card>
-            <Table 
-              columns={incomeColumns} 
-              dataSource={incomeData} 
-              pagination={false}
-              summary={() => (
-                <Table.Summary.Row>
-                  <Table.Summary.Cell index={0}>
-                    <strong>总计</strong>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={1}>
-                    <strong>¥1,128,900</strong>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={2}>
-                    <strong>100%</strong>
-                  </Table.Summary.Cell>
-                </Table.Summary.Row>
-              )}
-            />
-          </Card>
+              <Card>
+                <Table
+                  columns={incomeColumns}
+                  dataSource={incomeData}
+                  pagination={false}
+                  summary={() => (
+                    <Table.Summary.Row>
+                      <Table.Summary.Cell index={0}>
+                        <strong>总计</strong>
+                      </Table.Summary.Cell>
+                      <Table.Summary.Cell index={1}>
+                        <strong>¥1,128,900</strong>
+                      </Table.Summary.Cell>
+                      <Table.Summary.Cell index={2}>
+                        <strong>100%</strong>
+                      </Table.Summary.Cell>
+                    </Table.Summary.Row>
+                  )}
+                />
+              </Card>
             ),
           },
           {
             key: 'expense',
             label: '支出报表',
             children: (
-          <Card>
-            <Table 
-              columns={incomeColumns} 
-              dataSource={expenseData} 
-              pagination={false}
-              summary={() => (
-                <Table.Summary.Row>
-                  <Table.Summary.Cell index={0}>
-                    <strong>总计</strong>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={1}>
-                    <strong>¥893,000</strong>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={2}>
-                    <strong>100%</strong>
-                  </Table.Summary.Cell>
-                </Table.Summary.Row>
-              )}
-            />
-          </Card>
+              <Card>
+                <Table
+                  columns={incomeColumns}
+                  dataSource={expenseData}
+                  pagination={false}
+                  summary={() => (
+                    <Table.Summary.Row>
+                      <Table.Summary.Cell index={0}>
+                        <strong>总计</strong>
+                      </Table.Summary.Cell>
+                      <Table.Summary.Cell index={1}>
+                        <strong>¥893,000</strong>
+                      </Table.Summary.Cell>
+                      <Table.Summary.Cell index={2}>
+                        <strong>100%</strong>
+                      </Table.Summary.Cell>
+                    </Table.Summary.Row>
+                  )}
+                />
+              </Card>
             ),
           },
           {
             key: 'balance',
             label: '资产负债表',
             children: (
-          <Card>
-            <div style={{ 
-              height: 300, 
-              display: 'flex', 
-              alignItems: 'center', 
-              justifyContent: 'center',
-              background: '#f5f5f5',
-              borderRadius: 4
-            }}>
-              资产负债表 - 开发中
-            </div>
-          </Card>
+              <Card>
+                <div
+                  style={{
+                    height: 300,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: '#f5f5f5',
+                    borderRadius: 4,
+                  }}
+                >
+                  资产负债表 - 开发中
+                </div>
+              </Card>
             ),
           },
           {
             key: 'cashflow',
             label: '现金流量表',
             children: (
-          <Card>
-            <div style={{ 
-              height: 300, 
-              display: 'flex', 
-              alignItems: 'center', 
-              justifyContent: 'center',
-              background: '#f5f5f5',
-              borderRadius: 4
-            }}>
-              现金流量表 - 开发中
-            </div>
-          </Card>
+              <Card>
+                <div
+                  style={{
+                    height: 300,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: '#f5f5f5',
+                    borderRadius: 4,
+                  }}
+                >
+                  现金流量表 - 开发中
+                </div>
+              </Card>
             ),
           },
         ]}

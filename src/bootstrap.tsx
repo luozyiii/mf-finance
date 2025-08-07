@@ -6,11 +6,14 @@ import { financeRoutes } from './routes';
 const sendRoutesToParent = () => {
   if (window.parent && window.parent !== window) {
     try {
-      window.parent.postMessage({
-        type: 'MICRO_FRONTEND_ROUTES',
-        appKey: 'finance',
-        routes: financeRoutes
-      }, '*');
+      window.parent.postMessage(
+        {
+          type: 'MICRO_FRONTEND_ROUTES',
+          appKey: 'finance',
+          routes: financeRoutes,
+        },
+        '*'
+      );
       console.log('Finance routes sent to parent:', financeRoutes);
     } catch (error) {
       console.warn('Failed to send routes to parent:', error);
@@ -33,6 +36,6 @@ if (rootEl) {
   root.render(
     <React.StrictMode>
       <App />
-    </React.StrictMode>,
+    </React.StrictMode>
   );
 }

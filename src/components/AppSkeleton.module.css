@@ -7,7 +7,8 @@
 
 /* 骨架屏动画 */
 @keyframes skeletonPulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -346,12 +347,24 @@
   animation: skeletonPulse 1.5s ease-in-out infinite;
 }
 
-.tableCell:nth-child(1) { width: 70%; }
-.tableCell:nth-child(2) { width: 80%; }
-.tableCell:nth-child(3) { width: 60%; }
-.tableCell:nth-child(4) { width: 90%; }
-.tableCell:nth-child(5) { width: 75%; }
-.tableCell:nth-child(6) { width: 50%; }
+.tableCell:nth-child(1) {
+  width: 70%;
+}
+.tableCell:nth-child(2) {
+  width: 80%;
+}
+.tableCell:nth-child(3) {
+  width: 60%;
+}
+.tableCell:nth-child(4) {
+  width: 90%;
+}
+.tableCell:nth-child(5) {
+  width: 75%;
+}
+.tableCell:nth-child(6) {
+  width: 50%;
+}
 
 /* 分页 */
 .tablePagination {
@@ -388,18 +401,18 @@
   .metricsGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .reportsSection {
     grid-template-columns: 1fr;
   }
-  
+
   .tableHeaderRow,
   .tableRow {
     grid-template-columns: repeat(3, 1fr);
   }
-  
-  .tableHeaderCell:nth-child(n+4),
-  .tableCell:nth-child(n+4) {
+
+  .tableHeaderCell:nth-child(n + 4),
+  .tableCell:nth-child(n + 4) {
     display: none;
   }
 }

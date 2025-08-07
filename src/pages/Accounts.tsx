@@ -13,7 +13,8 @@ const columns = [
     dataIndex: 'type',
     key: 'type',
     render: (type: string) => {
-      const color = type === '资产' ? 'green' : type === '负债' ? 'red' : 'blue';
+      const color =
+        type === '资产' ? 'green' : type === '负债' ? 'red' : 'blue';
       return <Tag color={color}>{type}</Tag>;
     },
   },
@@ -37,8 +38,12 @@ const columns = [
     key: 'action',
     render: () => (
       <Space size="middle">
-        <Button type="link" icon={<EditOutlined />}>编辑</Button>
-        <Button type="link" danger icon={<DeleteOutlined />}>删除</Button>
+        <Button type="link" icon={<EditOutlined />}>
+          编辑
+        </Button>
+        <Button type="link" danger icon={<DeleteOutlined />}>
+          删除
+        </Button>
       </Space>
     ),
   },
@@ -92,7 +97,7 @@ export const Accounts: React.FC = () => {
           pagination={{
             showSizeChanger: true,
             showQuickJumper: true,
-            showTotal: (total) => `共 ${total} 条记录`
+            showTotal: total => `共 ${total} 条记录`,
           }}
         />
       </Card>
